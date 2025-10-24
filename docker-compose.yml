@@ -1,0 +1,16 @@
+services:
+  deepseek-ocr:
+    build: .
+    container_name: deepseek-ocr
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    ports:
+      - "7860:7860"
+    volumes:
+      - ~/.cache/huggingface:/root/.cache/huggingface
+    working_dir: /root
