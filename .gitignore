@@ -1,0 +1,6 @@
+*.pyc
+*.deb
+*.whl
+__pycache__/
+**/output/*
+**/samples/*
